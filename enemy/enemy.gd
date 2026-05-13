@@ -1,11 +1,25 @@
 extends CharacterBody2D
 
 const GRAVITY := 600
-var health : float = 20.0
+var health : int
+var damage : float
 
-func _ready() -> void:
+var data: EnemyData
+
+# Enemy death signal
+signal enemy_death
+
+
+func setup(incoming_data: EnemyData):
+	data = incoming_data
+	health = data.health
+	$AnimatedSprite2D.sprite_frames = data.sprite
+	
+	# Initialize health bar
 	$ProgressBar.max_value = health
 	$ProgressBar.value = health
+
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -26,4 +40,4 @@ func take_damage(amount: float):
 	if health <= 0:
 		print("enemy die")
 		queue_free()
-	
+		enemy_death.emit()
