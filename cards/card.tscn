@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ceeo4r3ve6nfg"]
+
+[ext_resource type="Texture2D" uid="uid://45omu0yhu2um" path="res://assets/sword.png" id="1_ivai2"]
+[ext_resource type="Script" uid="uid://2kouutjvxubg" path="res://cards/card.gd" id="1_nwofj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwofj"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Card" type="Control" unique_id=1587807124]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nwofj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=319593836]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 71.0
+color = Color(0.4627451, 0.3254902, 0.25490198, 1)
+
+[node name="CardName" type="Label" parent="." unique_id=721143839]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 42.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 6
+text = "Excalibur"
+
+[node name="CardArt" type="Panel" parent="." unique_id=1310024970]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 44.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nwofj")
+
+[node name="TextureRect" type="TextureRect" parent="CardArt" unique_id=1238175592]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 25.0
+texture = ExtResource("1_ivai2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="." unique_id=1784470819]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 63.0
+offset_right = 47.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 4
+text = "0.5 years"
+
+[node name="DiceLabel" type="Label" parent="." unique_id=1376964597]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -1.0
+offset_right = 46.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 6
+text = "1D6"
+
+[node name="Description" type="Label" parent="." unique_id=829985328]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 45.0
+offset_bottom = 64.0
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 4
+text = "Deal 1D6 damage to one enemy"
+autowrap_mode = 3
