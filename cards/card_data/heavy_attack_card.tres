@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cblx3ynnkjhpa"]
 
-[ext_resource type="Script" uid="uid://dtqwcre74dqqk" path="res://cards/card_data.gd" id="1_ds54w"]
+[ext_resource type="Script" uid="uid://cialk67mosayb" path="res://cards/card_data.gd" id="1_ds54w"]
 
 [resource]
 script = ExtResource("1_ds54w")
 card_name = "Heavy Attack"
 description = "Double the Damage"
-cost = 0.8
+cost = 2.0
 dice_count = 2
 card_color = Color(0.74509805, 0, 0, 1)
-metadata/_custom_type_script = "uid://dtqwcre74dqqk"
