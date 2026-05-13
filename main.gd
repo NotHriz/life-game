@@ -3,6 +3,8 @@ extends Node2D
 # Preload cards
 var card_scene = preload("res://cards/card.tscn")
 
+@onready var enemy: CharacterBody2D = $enemy
+
 func _ready() -> void:
 	deal_hand()
 
@@ -27,6 +29,10 @@ func deal_hand():
 		card.card_played.connect(_on_card_played)
 
 func _on_card_played(data: CardData):
+	# Check if enemy still alive
+	if (not enemy):
+		return
+		
 	# Check if user have enough age to play
 	if GameState.current_age < data.cost:
 		print("not enough years!")
@@ -34,4 +40,19 @@ func _on_card_played(data: CardData):
 		
 	# Deduct user age from cost
 	GameState.current_age -= data.cost
-	print("played: ", data.card_name)
+	
+	# Roll dice
+	var result = roll_dice(data)
+	match data.card_type:
+		"attack":
+			enemy.take_damage(result)
+		
+	print("played: ", data.card_name) # For debugging purposes
+	
+func roll_dice(data: CardData):
+	var sum := 0
+	
+	# Roll Dice for x amount of time
+	for i in range(data.dice_count):
+		sum += randi_range(1, data.dice_type)
+	return sum

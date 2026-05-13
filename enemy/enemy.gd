@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const GRAVITY := 600
-var health := 20
+var health : float = 20.0
 
 func _ready() -> void:
 	$ProgressBar.max_value = health
@@ -14,4 +14,16 @@ func _physics_process(delta: float) -> void:
 		velocity.y = GRAVITY
 	
 	move_and_slide()
+	
+func take_damage(amount: float):
+	print(amount)
+	health -= amount
+	
+	# Update health bar
+	$ProgressBar.value -= amount
+	
+	# Kill enemy if health 0 or below
+	if health <= 0:
+		print("enemy die")
+		queue_free()
 	
