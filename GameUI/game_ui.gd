@@ -1,7 +1,9 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	$Control/Age.text = "Age Remaining: "+ str(GameState.current_age) + " Years"
+	$Control/Age.text = "Age: " + "%.2f" % GameState.current_age + " Years"
+	GameState.age_changed.connect(_update_age_label)
+	_update_age_label()
 
-func _physics_process(delta: float) -> void:
-	$Control/Age.text = "Age Remaining: "+ str(GameState.current_age) + " Years"
+func _update_age_label():
+	$Control/Age.text = "Age: " + "%.2f" % GameState.current_age + " Years"

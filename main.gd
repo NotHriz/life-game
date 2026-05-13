@@ -11,6 +11,11 @@ var enemy = null
 func _ready() -> void:
 	deal_hand()
 	spawn_enemy()
+	
+	# Randomize character starting age
+	var age_max = randf_range(85, 110)
+	GameState.max_age = age_max
+	
 
 ##########################################################
 # Cards Section
@@ -44,12 +49,12 @@ func _on_card_played(data: CardData):
 		return
 		
 	# Check if user have enough age to play
-	if GameState.current_age < data.cost:
-		print("not enough years!")
+	if GameState.current_age + data.cost > GameState.max_age:
+		print("You Died")
 		return
 		
-	# Deduct user age from cost
-	GameState.current_age -= data.cost
+	# Add user age from cost
+	GameState.current_age += data.cost
 	
 	# Roll dice
 	var result = roll_dice(data)
