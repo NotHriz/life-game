@@ -1,4 +1,6 @@
-extends Control
+extends Button
+
+signal card_played(card_data)
 
 var data: CardData
 
@@ -9,19 +11,7 @@ func setup(incoming_data: CardData):
 	$CostLabel.text = str(data.cost) + "yr"
 	$DiceLabel.text = str(data.dice_count) + "d" + str(data.dice_type)
 	$DescLabel.text = data.description
+	$CardArt/TextureRect.texture = data.icon
 
-func play_card():
-	if GameState.current_age < data.cost:
-		print("not enough years!")
-		return
-	
-	GameState.current_age -= data.cost
-	var result = roll_dice()
-	print("Rolled: ", result)
-	return result
-
-func roll_dice() -> int:
-	var total = 0
-	for i in data.dice_count:
-		total += randi_range(1, data.dice_type)
-	return total
+func _on_pressed():
+	emit_signal("card_played", data)

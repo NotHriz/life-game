@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://ct4f8sd8cprhn" path="res://maps/map1.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cnpymd0g86vve" path="res://player/player.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cr2n47bptolw3" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dqv50yamk180v" path="res://enemy/enemy.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cknpoupaqnhu" path="res://GameUI/game_ui.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://ceeo4r3ve6nfg" path="res://cards/card.tscn" id="5_lquwl"]
 
 [node name="main" type="Node2D" unique_id=1853528678]
+script = ExtResource("1_lquwl")
 
 [node name="TileMapLayer" parent="." unique_id=1845492822 instance=ExtResource("1_0xm2m")]
 
@@ -18,8 +19,8 @@ position = Vector2(259, 61)
 
 [node name="GameUI" parent="." unique_id=1573203516 instance=ExtResource("4_1bvp3")]
 
-[node name="Card" parent="." unique_id=1587807124 instance=ExtResource("5_lquwl")]
-offset_left = 26.0
-offset_top = 111.0
-offset_right = 66.0
-offset_bottom = 151.0
+[node name="CardHand" type="HBoxContainer" parent="." unique_id=275926786]
+offset_left = 33.0
+offset_top = 100.0
+offset_right = 273.0
+offset_bottom = 180.0
