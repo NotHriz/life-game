@@ -22,4 +22,4 @@ offset_right = 273.0
 offset_bottom = 180.0
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=684905475]
-position = Vector2(258, 84)
+position = Vector2(262, 50)

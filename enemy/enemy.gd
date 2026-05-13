@@ -14,6 +14,7 @@ func setup(incoming_data: EnemyData):
 	data = incoming_data
 	health = data.health
 	$AnimatedSprite2D.sprite_frames = data.sprite
+	$AnimatedSprite2D.play()
 	
 	# Initialize health bar
 	$ProgressBar.max_value = health
@@ -39,5 +40,6 @@ func take_damage(amount: float):
 	# Kill enemy if health 0 or below
 	if health <= 0:
 		print("enemy die")
-		queue_free()
 		enemy_death.emit()
+		queue_free()
+		

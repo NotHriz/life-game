@@ -1,60 +1,53 @@
 [gd_scene format=3 uid="uid://dqv50yamk180v"]
 
 [ext_resource type="Script" uid="uid://g113hk0bmp18" path="res://enemy/enemy.gd" id="1_ofsxj"]
-[ext_resource type="Texture2D" uid="uid://ft68v0prbbv5" path="res://assets/FarmerStory/FarmerStory/Enemy/enemy_animated.png" id="2_ppra6"]
+[ext_resource type="Texture2D" uid="uid://bdwp7kskghjw5" path="res://assets/LifeGame/goblin jwes.png" id="2_ofsxj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p200p"]
-size = Vector2(12, 15)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppra6"]
+atlas = ExtResource("2_ofsxj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p200p"]
+atlas = ExtResource("2_ofsxj")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pmsee"]
-atlas = ExtResource("2_ppra6")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wwld"]
-atlas = ExtResource("2_ppra6")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y5vj3"]
-atlas = ExtResource("2_ppra6")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ffra"]
-atlas = ExtResource("2_ppra6")
-region = Rect2(48, 0, 16, 16)
+atlas = ExtResource("2_ofsxj")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e355f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ppra6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p200p")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pmsee")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wwld")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y5vj3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ffra")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p200p"]
+size = Vector2(16, 17.5)
+
 [node name="enemy" type="CharacterBody2D" unique_id=1240424887]
 collision_layer = 4
 script = ExtResource("1_ofsxj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=518019475]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_p200p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=157324596]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e355f")
 autoplay = "default"
 flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=518019475]
+position = Vector2(-1, 2.25)
+shape = SubResource("RectangleShape2D_p200p")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=465327368]
 modulate = Color(1, 0, 0, 1)
