@@ -3,6 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://45omu0yhu2um" path="res://assets/sword.png" id="1_ivai2"]
 [ext_resource type="Script" uid="uid://2kouutjvxubg" path="res://cards/card.gd" id="1_nwofj"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwofj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4k7q8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f61jr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsqqk"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwofj"]
 bg_color = Color(0, 0, 0, 0)
 border_width_left = 1
@@ -11,20 +19,26 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
-[node name="Card" type="Control" unique_id=1587807124]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Card" type="Button" unique_id=389789032]
+custom_minimum_size = Vector2(50, 80)
+offset_right = 60.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nwofj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4k7q8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f61jr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jsqqk")
+action_mode = 0
+icon_alignment = 1
 script = ExtResource("1_nwofj")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=319593836]
 layout_mode = 0
 offset_right = 48.0
 offset_bottom = 71.0
+mouse_filter = 2
 color = Color(0.4627451, 0.3254902, 0.25490198, 1)
 
-[node name="CardName" type="Label" parent="." unique_id=721143839]
+[node name="NameLabel" type="Label" parent="." unique_id=721143839]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -1.0
@@ -39,6 +53,7 @@ offset_left = 3.0
 offset_top = 8.0
 offset_right = 44.0
 offset_bottom = 34.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nwofj")
 
 [node name="TextureRect" type="TextureRect" parent="CardArt" unique_id=1238175592]
@@ -52,7 +67,7 @@ texture = ExtResource("1_ivai2")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Cost" type="Label" parent="." unique_id=1784470819]
+[node name="CostLabel" type="Label" parent="." unique_id=1784470819]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 63.0
@@ -70,7 +85,7 @@ offset_bottom = 8.0
 theme_override_font_sizes/font_size = 6
 text = "1D6"
 
-[node name="Description" type="Label" parent="." unique_id=829985328]
+[node name="DescLabel" type="Label" parent="." unique_id=829985328]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 36.0
@@ -80,3 +95,5 @@ theme_override_constants/line_spacing = -2
 theme_override_font_sizes/font_size = 4
 text = "Deal 1D6 damage to one enemy"
 autowrap_mode = 3
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,6 +1,7 @@
 extends Resource
 class_name CardData
 
+@export var icon: Texture2D
 @export var card_name: String = ""
 @export var description: String = ""
 @export var cost: float = 0.5
