@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c37ou6th6qd85"]
+
+[ext_resource type="Script" uid="uid://c221m6c8uqkim" path="res://enemy/enemy_data.gd" id="1_cqlqd"]
+[ext_resource type="Texture2D" uid="uid://ft68v0prbbv5" path="res://assets/FarmerStory/FarmerStory/Enemy/enemy_animated.png" id="2_j0k7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4ali"]
+atlas = ExtResource("2_j0k7c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bamts"]
+atlas = ExtResource("2_j0k7c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hj0t"]
+atlas = ExtResource("2_j0k7c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njv4u"]
+atlas = ExtResource("2_j0k7c")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0t5mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4ali")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bamts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hj0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njv4u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[resource]
+script = ExtResource("1_cqlqd")
+enemy_name = "skeleton"
+sprite = SubResource("SpriteFrames_0t5mt")
+metadata/_custom_type_script = "uid://c221m6c8uqkim"
