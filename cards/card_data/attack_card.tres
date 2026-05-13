@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://db2ouf7rv266o"]
 
-[ext_resource type="Script" uid="uid://dtqwcre74dqqk" path="res://cards/card_data.gd" id="1_3or1p"]
+[ext_resource type="Script" uid="uid://cialk67mosayb" path="res://cards/card_data.gd" id="1_3or1p"]
 [ext_resource type="Texture2D" uid="uid://45omu0yhu2um" path="res://assets/sword.png" id="1_604j2"]
 
 [resource]
@@ -8,5 +8,5 @@ script = ExtResource("1_3or1p")
 icon = ExtResource("1_604j2")
 card_name = "Attack"
 description = "Strike the enemy"
+cost = 1.0
 card_color = Color(0.74509805, 0, 0, 1)
-metadata/_custom_type_script = "uid://dtqwcre74dqqk"
