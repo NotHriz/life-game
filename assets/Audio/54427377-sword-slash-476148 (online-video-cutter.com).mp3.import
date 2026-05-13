@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5k7mwqc3abjm"
+path="res://.godot/imported/54427377-sword-slash-476148 (online-video-cutter.com).mp3-7e1c964beb2412337e7ae7d988b73483.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/54427377-sword-slash-476148 (online-video-cutter.com).mp3"
+dest_files=["res://.godot/imported/54427377-sword-slash-476148 (online-video-cutter.com).mp3-7e1c964beb2412337e7ae7d988b73483.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
