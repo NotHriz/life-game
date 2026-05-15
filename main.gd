@@ -10,6 +10,8 @@ var enemy = null
 
 func _ready() -> void:
 	deal_hand()
+	# Add enemy to pool
+	enemy_pool = load_all_enemy()
 	spawn_enemy()
 	
 	# Randomize character starting age
@@ -79,24 +81,16 @@ func roll_dice(data: CardData):
 
 # Load all enemies
 func load_all_enemy() -> Array:
-	var enemies = []
-	var dir = DirAccess.open("res://enemy/enemy_data/")
-	dir.list_dir_begin()
-	var file = dir.get_next()
-	while file != "":
-		if file.ends_with(".tres"):
-			enemies.append(load("res://enemy/enemy_data/" + file))
-		file = dir.get_next()
-	return enemies
+	return [
+		preload("res://enemy/enemy_data/wizard.tres"),
+		preload("res://enemy/enemy_data/dragon.tres"),
+		preload("res://enemy/enemy_data/ghost.tres"),
+		preload("res://enemy/enemy_data/goblin.tres")
+	]
 	
 	
 # Spawn Enemy
 func spawn_enemy():
-	# Refill pool if empty
-	if enemy_pool.is_empty():
-		enemy_pool = load_all_enemy()
-		enemy_pool.shuffle()
-		
 	# Pick and remove from pool
 	var data = enemy_pool.pop_back()
 	
