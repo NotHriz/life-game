@@ -86,7 +86,7 @@ func _on_card_played(data: CardData):
 	GameState.current_age += data.cost
 	
 	# Roll dice
-	var result = roll_dice(data.dice_count, data.dice_type)
+	var result = await roll_dice(data.dice_count, data.dice_type)
 	var player_anim = ""
 	var enemy_anim = ""
 	match data.card_type:
@@ -141,6 +141,22 @@ func roll_dice(dice_count: int, dice_type: int):
 	# Roll Dice for x amount of time
 	for i in range(dice_count):
 		sum += randi_range(1, dice_type)
+	
+	# Play animation and display result
+	$DiceAnimation.visible = true
+	$DiceAnimation.play()
+	await $DiceAnimation.animation_finished
+	
+	
+	$DiceResult.visible = true
+	$DiceResult.text = "Rolled: " + str(sum)
+	await get_tree().create_timer(1.5).timeout
+	
+	$DiceAnimation.visible = false
+	$DiceResult.visible = false
+	
+	
+	
 	return sum
 
 func set_cards_interactable(value: bool):
@@ -177,7 +193,7 @@ func spawn_enemy():
 	enemy.enemy_death.connect(spawn_enemy)
 	
 func enemy_attack():
-	var enemy_damage = roll_dice(enemy.data.dice_count, enemy.data.dice_type)
+	var enemy_damage = await roll_dice(enemy.data.dice_count, enemy.data.dice_type)
 	var original_damage = enemy_damage
 	# Caluclate shield if applicable (prevent -ve number)
 	enemy_damage = max(0, enemy_damage - GameState.shield)
