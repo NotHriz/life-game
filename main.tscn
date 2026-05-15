@@ -4,6 +4,43 @@
 [ext_resource type="PackedScene" uid="uid://cnpymd0g86vve" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cr2n47bptolw3" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cknpoupaqnhu" path="res://GameUI/game_ui.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://blhkkoi67geid" path="res://assets/LifeGame/dice.png" id="5_lquwl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
+atlas = ExtResource("5_lquwl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4c57u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kek77")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="main" type="Node2D" unique_id=1853528678]
 script = ExtResource("1_lquwl")
@@ -11,7 +48,7 @@ script = ExtResource("1_lquwl")
 [node name="TileMapLayer" parent="." unique_id=1845492822 instance=ExtResource("1_0xm2m")]
 
 [node name="player" parent="." unique_id=929680058 instance=ExtResource("1_ig7tw")]
-position = Vector2(49, 65)
+position = Vector2(119, 72)
 
 [node name="GameUI" parent="." unique_id=1573203516 instance=ExtResource("4_1bvp3")]
 
@@ -22,4 +59,20 @@ offset_right = 273.0
 offset_bottom = 180.0
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=684905475]
-position = Vector2(258, 84)
+position = Vector2(201, 69)
+
+[node name="DiceAnimation" type="AnimatedSprite2D" parent="." unique_id=973032846]
+visible = false
+position = Vector2(156, 20)
+sprite_frames = SubResource("SpriteFrames_4c57u")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="DiceResult" type="Label" parent="." unique_id=1036442446]
+visible = false
+offset_left = 126.0
+offset_top = 27.0
+offset_right = 189.0
+offset_bottom = 50.0
+text = "result: 1"
