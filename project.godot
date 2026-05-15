@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="LifeGame"
-run/main_scene="uid://d3ch52exxe53"
+run/main_scene="res://home_menu/home_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ba2380jatqriy"
+
 [autoload]
 
-GameState="*uid://cl7t1csoi1mru"
+GameState="*uid://jl1us85rgjce"
 
 [display]
 
@@ -25,6 +29,8 @@ window/size/viewport_width=320
 window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
+window/stretch/aspect="expand"
+window/main_scene="uid://dn4s5uhphgyw8"
 
 [gui]
 
