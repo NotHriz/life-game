@@ -9,7 +9,7 @@ var enemy_scene = preload("res://enemy/enemy.tscn")
 
 # Sound Preload
 var card_select_sfx = load("res://assets/sound/Card select (mp3cut.net).wav")
-var dragon_attack_sfx = load("res://assets/sound/Dragon attack (mp3cut.net).wav")
+var dragon_attack_sfx = load("res://assets/sound/DragonAttack.wav")
 var ghost_attack_sfx = load("res://assets/sound/Ghost attack (mp3cut.net).wav")
 var goblin_attack_sfx = load("res://assets/sound/goblin attack 2.mp3")
 var wizard_attack_sfx = load("res://assets/sound/Wizard attack (mp3cut.net).wav")
