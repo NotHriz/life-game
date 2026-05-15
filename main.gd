@@ -79,7 +79,7 @@ func _on_card_played(data: CardData):
 			player_anim = "attack"
 			enemy_anim = "attack"
 		"defence":
-			GameState.shield = true
+			GameState.shield = min(12, GameState.shield + result)
 		"heal":
 			GameState.current_age -= result
 			player_anim = "heal"
@@ -102,6 +102,7 @@ func _on_card_played(data: CardData):
 	# Check again if player killed enemy
 	if (enemy):
 		enemy_attack()
+		
 	
 	# Added buffer so it isnt spammy
 	await get_tree().create_timer(1.5).timeout
@@ -155,9 +156,10 @@ func spawn_enemy():
 	
 func enemy_attack():
 	var enemy_damage = enemy.data.damage
+	var original_damage = enemy_damage
 	# Caluclate shield if applicable (prevent -ve number)
-	if (GameState.shield):
-		enemy_damage = 0
+	enemy_damage = max(0, enemy_damage - GameState.shield)
+	GameState.shield = max(0, GameState.shield - original_damage)
 	
 	GameState.current_age += enemy_damage
 	

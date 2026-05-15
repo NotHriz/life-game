@@ -6,7 +6,13 @@ signal animation_finished
 func _ready() -> void:
 	GameState.player_death.connect(_on_player_death)
 	$AnimatedSprite2D.play("idle")
+	GameState.shield_changed.connect(_update_shield_bar)
+	_update_shield_bar()
 
+func _update_shield_bar():
+	$ShieldBar.max_value = 12 
+	$ShieldBar.value = GameState.shield
+	
 func _physics_process(delta: float) -> void:
 	
 	# Make character fall

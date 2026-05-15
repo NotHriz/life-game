@@ -437,6 +437,18 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boad6"]
+bg_color = Color(0.050980393, 0.050980393, 0.16862746, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6k8r"]
+bg_color = Color(0.5647059, 0.8352941, 1, 1)
+corner_detail = 4
+
 [node name="player" type="CharacterBody2D" unique_id=929680058]
 collision_layer = 2
 script = ExtResource("1_rkbax")
@@ -458,5 +470,17 @@ zoom = Vector2(4, 4)
 
 [node name="CardEffect" type="AnimatedSprite2D" parent="." unique_id=710169463]
 sprite_frames = SubResource("SpriteFrames_bjvpn")
-animation = &"ghost_attack"
+animation = &"attack"
 autoplay = "default"
+
+[node name="ShieldBar" type="ProgressBar" parent="." unique_id=1832666218]
+offset_left = -20.0
+offset_top = -16.0
+offset_right = -16.0
+offset_bottom = 11.0
+theme_override_styles/background = SubResource("StyleBoxFlat_boad6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g6k8r")
+max_value = 12.0
+value = 3.0
+fill_mode = 3
+show_percentage = false
