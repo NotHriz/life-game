@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bk7k23ftk85sy"]
 
-[ext_resource type="Script" uid="uid://b7ubjorcvx0mh" path="res://enemy/enemy_data.gd" id="1_buuxr"]
+[ext_resource type="Script" uid="uid://c221m6c8uqkim" path="res://enemy/enemy_data.gd" id="1_buuxr"]
 [ext_resource type="Texture2D" uid="uid://b4hw4nt0kr327" path="res://assets/LifeGame/wizard final boss.png" id="2_h7max"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7max"]
