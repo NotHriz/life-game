@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bej63gjixyq16"]
 
-[ext_resource type="Script" uid="uid://c221m6c8uqkim" path="res://enemy/enemy_data.gd" id="1_8jtvi"]
+[ext_resource type="Script" uid="uid://b7ubjorcvx0mh" path="res://enemy/enemy_data.gd" id="1_8jtvi"]
 [ext_resource type="Texture2D" uid="uid://c4r65b51uopy3" path="res://assets/LifeGame/ghost.png" id="2_8vtbl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mt526"]
@@ -104,6 +104,5 @@ animations = [{
 script = ExtResource("1_8jtvi")
 enemy_name = "ghost"
 health = 27.0
-damage = 7.0
 sprite = SubResource("SpriteFrames_8jtvi")
 metadata/_custom_type_script = "uid://c221m6c8uqkim"

@@ -1,14 +1,19 @@
-[gd_scene format=3 uid="uid://d3ch52exxe53"]
+[gd_scene format=4 uid="uid://d3ch52exxe53"]
 
 [ext_resource type="PackedScene" uid="uid://ct4f8sd8cprhn" path="res://maps/map1.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cnpymd0g86vve" path="res://player/player.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://cr2n47bptolw3" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://c5w07s5fncns3" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cknpoupaqnhu" path="res://GameUI/game_ui.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bhyptsc2vej4u" path="res://assets/FarmerStory/j4.png" id="5_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dedtyp1vlceed" path="res://assets/FarmerStory/j3.png" id="6_kek77"]
+[ext_resource type="Texture2D" uid="uid://clbxylswibksw" path="res://assets/FarmerStory/j2.png" id="7_4c57u"]
+[ext_resource type="Texture2D" uid="uid://8a7sil42frao" path="res://assets/FarmerStory/j1.png" id="8_efxa6"]
 
 [node name="main" type="Node2D" unique_id=1853528678]
 script = ExtResource("1_lquwl")
 
 [node name="TileMapLayer" parent="." unique_id=1845492822 instance=ExtResource("1_0xm2m")]
+tile_map_data = PackedByteArray("AAAAAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAYAAAABAAAAAAADAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAALAAYAAAABAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAASAAYAAAABAAAAAAATAAYAAAACAAAAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAATAAcAAAACAAEAAAATAAgAAAACAAEAAAATAAkAAAACAAEAAAATAAoAAAACAAEAAAAHAAgAAAABAAEAAAAHAAcAAAABAAEAAAAGAAcAAAABAAEAAAAFAAcAAAABAAEAAAAEAAcAAAABAAEAAAADAAcAAAABAAEAAAACAAcAAAABAAEAAAABAAcAAAABAAEAAAABAAgAAAABAAEAAAABAAkAAAABAAEAAAABAAoAAAABAAEAAAACAAoAAAABAAEAAAACAAkAAAABAAEAAAACAAgAAAABAAEAAAADAAgAAAABAAEAAAADAAkAAAABAAEAAAADAAoAAAABAAEAAAAEAAoAAAABAAEAAAAEAAkAAAABAAEAAAAEAAgAAAABAAEAAAAFAAgAAAABAAEAAAAFAAkAAAABAAEAAAAFAAoAAAABAAEAAAAGAAoAAAABAAEAAAAGAAkAAAABAAEAAAAGAAgAAAABAAEAAAAHAAkAAAABAAEAAAAHAAoAAAABAAEAAAAIAAoAAAABAAEAAAAIAAkAAAABAAEAAAAIAAgAAAABAAEAAAAIAAcAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAABAAEAAAAKAAoAAAABAAEAAAAKAAkAAAABAAEAAAAKAAgAAAABAAEAAAAKAAcAAAABAAEAAAALAAcAAAABAAEAAAALAAgAAAABAAEAAAALAAkAAAABAAEAAAALAAoAAAABAAEAAAAMAAoAAAABAAEAAAAMAAkAAAABAAEAAAAMAAgAAAABAAEAAAAMAAcAAAABAAEAAAANAAcAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAAOAAoAAAABAAEAAAAOAAkAAAABAAEAAAAOAAgAAAABAAEAAAAOAAcAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAEAAAAQAAoAAAABAAEAAAAQAAkAAAABAAEAAAAQAAgAAAABAAEAAAAQAAcAAAABAAEAAAARAAcAAAABAAEAAAARAAgAAAABAAEAAAARAAkAAAABAAEAAAARAAoAAAABAAEAAAASAAoAAAABAAEAAAASAAkAAAABAAEAAAASAAgAAAABAAEAAAASAAcAAAABAAEAAAAAAAsAAAAAAAEAAAATAAsAAAACAAEAAAAOAAsAAAABAAEAAAANAAsAAAABAAEAAAAMAAsAAAABAAEAAAALAAsAAAABAAEAAAAKAAsAAAABAAEAAAAJAAsAAAABAAEAAAAIAAsAAAABAAEAAAAHAAsAAAABAAEAAAAGAAsAAAABAAEAAAAFAAsAAAABAAEAAAAEAAsAAAABAAEAAAADAAsAAAABAAEAAAACAAsAAAABAAEAAAABAAsAAAABAAEAAAAPAAsAAAABAAEAAAAQAAsAAAABAAEAAAARAAsAAAABAAEAAAASAAsAAAABAAEAAAA=")
 
 [node name="player" parent="." unique_id=929680058 instance=ExtResource("1_ig7tw")]
 position = Vector2(49, 65)
@@ -23,3 +28,33 @@ offset_bottom = 180.0
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=684905475]
 position = Vector2(258, 84)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=827257368]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1509689903]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=2038850385]
+position = Vector2(158, 56.000004)
+scale = Vector2(0.25237703, 0.08645834)
+texture = ExtResource("5_5vw27")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1196686943]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1811518284]
+position = Vector2(160, 59)
+scale = Vector2(0.090277806, 0.090277806)
+texture = ExtResource("6_kek77")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=806502474]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1850607260]
+position = Vector2(147, 57)
+scale = Vector2(0.087037064, 0.08703704)
+texture = ExtResource("7_4c57u")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1991488262]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1750109807]
+position = Vector2(163.49998, 55.000004)
+scale = Vector2(0.08580728, 0.08634259)
+texture = ExtResource("8_efxa6")

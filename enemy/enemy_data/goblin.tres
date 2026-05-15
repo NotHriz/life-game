@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://c37ou6th6qd85"]
 
-[ext_resource type="Script" uid="uid://c221m6c8uqkim" path="res://enemy/enemy_data.gd" id="1_6algr"]
+[ext_resource type="Script" uid="uid://b7ubjorcvx0mh" path="res://enemy/enemy_data.gd" id="1_6algr"]
 [ext_resource type="Texture2D" uid="uid://bdwp7kskghjw5" path="res://assets/LifeGame/goblin jwes.png" id="2_rulgc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3pv7"]
@@ -83,6 +83,5 @@ animations = [{
 script = ExtResource("1_6algr")
 enemy_name = "goblin"
 health = 15.0
-damage = 2.0
 sprite = SubResource("SpriteFrames_u0tf1")
 metadata/_custom_type_script = "uid://c221m6c8uqkim"
