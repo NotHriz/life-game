@@ -28,7 +28,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pmsee")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -42,7 +42,8 @@ script = ExtResource("1_ofsxj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=157324596]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e355f")
-autoplay = "default"
+animation = &"idle"
+autoplay = "idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=518019475]

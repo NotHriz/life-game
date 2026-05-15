@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 const GRAVITY := 600
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("idle")
+
 func _physics_process(delta: float) -> void:
 	
 	# Make character fall

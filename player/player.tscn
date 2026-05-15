@@ -17,6 +17,11 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g6k8r"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attacking",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1dw6")
@@ -28,7 +33,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qjkh3")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 3.0
 }]
 
@@ -42,7 +47,8 @@ script = ExtResource("1_rkbax")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=161493991]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g6k8r")
-autoplay = "default"
+animation = &"attacking"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435151692]
 position = Vector2(-1.25, 0)

@@ -28,7 +28,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_knaeq")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 

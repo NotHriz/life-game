@@ -14,7 +14,7 @@ func setup(incoming_data: EnemyData):
 	data = incoming_data
 	health = data.health
 	$AnimatedSprite2D.sprite_frames = data.sprite
-	$AnimatedSprite2D.play()
+	$AnimatedSprite2D.play("idle")
 	
 	# Initialize health bar
 	$ProgressBar.max_value = health
