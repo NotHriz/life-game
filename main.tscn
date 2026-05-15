@@ -111,3 +111,4 @@ scale = Vector2(0.08580728, 0.08634259)
 texture = ExtResource("8_efxa6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1337812761]
+zoom = Vector2(4, 5)
