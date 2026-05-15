@@ -7,7 +7,7 @@ var enemy_scene = preload("res://enemy/enemy.tscn")
 # Preload player
 @onready var player: CharacterBody2D = $player
 
-var enemy_just_spawned : bool = true
+var enemy_just_spawned : bool = false
 # Sound Preload
 var card_select_sfx = load("res://assets/sound/Card select (mp3cut.net).wav")
 var dragon_attack_sfx = load("res://assets/sound/DragonAttack.wav")
@@ -21,6 +21,7 @@ var enemy_pool: Array = []
 var enemy = null
 
 func _ready() -> void:
+	GameState.player_death.connect(_on_player_death)
 	deal_hand()
 	# Add enemy to pool
 	enemy_pool = load_all_enemy()
@@ -32,7 +33,7 @@ func _ready() -> void:
 	
 	# Temporary OP Age
 	# TODO: Remove
-	GameState.max_age = 99999999
+	# GameState.max_age = 99999999
 	
 
 ##########################################################
@@ -71,13 +72,14 @@ func _on_card_played(data: CardData):
 	# Add buffer so sound isnt spammy
 	await get_tree().create_timer(0.5).timeout
 	
-	# Check if enemy still alive	if (not enemy):
-	return
+	# Check if enemy still alive
+	if (not enemy):
+		return
 	
 	############### Player Turn ####################
 	# Check if user have enough age to play
 	if GameState.current_age + data.cost > GameState.max_age:
-		print("You Died")
+		GameState.player_death.emit()
 		return
 		
 	# Add user age from cost
@@ -206,6 +208,19 @@ func enemy_attack():
 	if (player_anim != ""):
 		await player.animation_finished
 		
+
+#################################################################
+# player Section
+#################################################################
+func _on_player_death():
+	print("Switching scene")
+	# Reset everything
+	GameState.reset()
+	# Wait for animation to finish
+	await get_tree().create_timer(3).timeout # Wait for animation
+	# Change scene
+	get_tree().change_scene_to_file("res://home_menu/home_menu.tscn")
+
 
 # -------------------------- UTILITY -------------------------------
 func play_sfx(sfx: AudioStream):
