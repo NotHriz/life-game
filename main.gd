@@ -4,6 +4,9 @@ extends Node2D
 var card_scene = preload("res://cards/card.tscn")
 # Preload enemy
 var enemy_scene = preload("res://enemy/enemy.tscn")
+# Preload player
+@onready var player: CharacterBody2D = $player
+
 
 var enemy_pool: Array = []
 var enemy = null
@@ -17,6 +20,10 @@ func _ready() -> void:
 	# Randomize character starting age
 	var age_max = randf_range(85, 110)
 	GameState.max_age = age_max
+	
+	# Temporary OP Age
+	# TODO: Remove
+	GameState.max_age = 99999999
 	
 
 ##########################################################
@@ -46,6 +53,9 @@ func deal_hand():
 
 # Play Card
 func _on_card_played(data: CardData):
+	# Disable all card while active
+	set_cards_interactable(true)
+	
 	# Check if enemy still alive
 	if (not enemy):
 		return
@@ -61,23 +71,45 @@ func _on_card_played(data: CardData):
 	
 	# Roll dice
 	var result = roll_dice(data)
+	var player_anim = ""
+	var enemy_anim = ""
 	match data.card_type:
 		"attack":
 			enemy.take_damage(result)
-		# TODO: Make something for other card
+			player_anim = "attack"
+			enemy_anim = "attack"
 		"defence":
-			pass
+			GameState.shield = true
 		"heal":
-			pass
-		
+			GameState.current_age -= result
+			player_anim = "heal"
+			
+	# Play animation
+	player.play_animation(player_anim)
+	if (enemy):
+		enemy.play_animation(enemy_anim)
+	
+	# Wait for animation to finish
+	if (player_anim != ""):
+		await player.animation_finished
+	if (enemy_anim != ""):
+		await enemy.animation_finished
+
+
 	print("played: ", data.card_name) # For debugging purposes
 
 	############### Enemy Turn ####################
 	# Check again if player killed enemy
 	if (enemy):
 		enemy_attack()
-		
-		
+	
+	
+	# Check if enemy killed player
+	if (GameState.current_age >= GameState.max_age):
+		GameState.player_death.emit()
+	else:
+		set_cards_interactable(false)
+
 # Roll Dice
 func roll_dice(data: CardData):
 	var sum := 0
@@ -87,6 +119,9 @@ func roll_dice(data: CardData):
 		sum += randi_range(1, data.dice_type)
 	return sum
 
+func set_cards_interactable(value: bool):
+	for card in $CardHand.get_children():
+		card.disabled = value
 #################################################################
 # Enemies Section
 #################################################################
@@ -117,14 +152,30 @@ func spawn_enemy():
 	enemy.enemy_death.connect(spawn_enemy)
 	
 func enemy_attack():
-	var enemy_name = enemy.data.enemy_name
-	GameState.current_age += enemy.data.damage
+	var enemy_damage = enemy.data.damage
+	# Caluclate shield if applicable (prevent -ve number)
+	if (GameState.shield):
+		enemy_damage = 0
+	
+	GameState.current_age += enemy_damage
+	
+	# Enemy attack animation
+	enemy.play_attack_animation()
+	var player_anim = ""
 	match enemy.data.enemy_name:
 		"goblin":
-			pass
+			player_anim = "goblin_attack"
 		"ghost":
-			pass
+			player_anim = "ghost_attack"
 		"dragon":
-			pass
+			player_anim = "dragon_attack"
 		"wizard":
-			pass
+			player_anim = "wizard_attack"
+	
+	player.play_animation(player_anim)
+	
+	# Wait for animation to finish
+	if (player_anim != ""):
+		await player.animation_finished
+	
+	
