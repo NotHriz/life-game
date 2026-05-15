@@ -7,6 +7,7 @@ var enemy_scene = preload("res://enemy/enemy.tscn")
 # Preload player
 @onready var player: CharacterBody2D = $player
 
+var enemy_just_spawned : bool = true
 # Sound Preload
 var card_select_sfx = load("res://assets/sound/Card select (mp3cut.net).wav")
 var dragon_attack_sfx = load("res://assets/sound/DragonAttack.wav")
@@ -118,9 +119,10 @@ func _on_card_played(data: CardData):
 
 	############### Enemy Turn ####################
 	# Check again if player killed enemy
-	if (enemy):
-		enemy_attack()
-		
+	if is_instance_valid(enemy) and not enemy_just_spawned:
+		await enemy_attack()
+	
+	enemy_just_spawned = false
 	
 	# Added buffer so it isnt spammy
 	await get_tree().create_timer(1.5).timeout
@@ -167,6 +169,7 @@ func spawn_enemy():
 	add_child(enemy_instance)
 	enemy_instance.position = $EnemySpawnPoint.position
 	enemy_instance.setup(data)
+	enemy_just_spawned = true
 	enemy = enemy_instance
 	
 	# Spawn next enemy when current one dies
