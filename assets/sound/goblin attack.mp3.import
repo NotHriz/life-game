@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lknm1j5farug"
+path="res://.godot/imported/goblin attack.mp3-f20b604cd02162a269f45ffb34592947.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/goblin attack.mp3"
+dest_files=["res://.godot/imported/goblin attack.mp3-f20b604cd02162a269f45ffb34592947.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

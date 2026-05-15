@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnpymd0g86vve" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cr2n47bptolw3" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cknpoupaqnhu" path="res://GameUI/game_ui.tscn" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://dgbgwdcv1xsp8" path="res://assets/sound/Game music.mp3" id="5_lquwl"]
 
 [node name="main" type="Node2D" unique_id=1853528678]
 script = ExtResource("1_lquwl")
@@ -23,3 +24,10 @@ offset_bottom = 180.0
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=684905475]
 position = Vector2(262, 50)
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2009627487]
+stream = ExtResource("5_lquwl")
+volume_db = -10.0
+autoplay = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1164466737]

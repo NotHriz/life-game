@@ -11,3 +11,4 @@ dice_count = 2
 dice_type = 4
 card_color = Color(0, 0, 1, 1)
 card_type = "defence"
+metadata/_custom_type_script = "uid://cialk67mosayb"
