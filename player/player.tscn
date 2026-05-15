@@ -466,6 +466,7 @@ position = Vector2(-1.25, 0)
 shape = SubResource("RectangleShape2D_oul6g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1889861676]
+enabled = false
 zoom = Vector2(4, 4)
 
 [node name="CardEffect" type="AnimatedSprite2D" parent="." unique_id=710169463]

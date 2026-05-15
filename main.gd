@@ -32,9 +32,7 @@ func _ready() -> void:
 	var age_max = randf_range(85, 110)
 	GameState.max_age = age_max
 	
-	# Temporary OP Age
-	# TODO: Remove
-	# GameState.max_age = 99999999
+	$Camera2D.position = Vector2(160, 90)
 	
 
 ##########################################################
