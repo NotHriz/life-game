@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dedtyp1vlceed" path="res://assets/FarmerStory/j3.png" id="6_kek77"]
 [ext_resource type="Texture2D" uid="uid://clbxylswibksw" path="res://assets/FarmerStory/j2.png" id="7_4c57u"]
 [ext_resource type="Texture2D" uid="uid://8a7sil42frao" path="res://assets/FarmerStory/j1.png" id="8_efxa6"]
+[ext_resource type="FontFile" uid="uid://ked3l4ekcq4w" path="res://GameUI/PublicPixel-rv0pA.ttf" id="10_4c57u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
 atlas = ExtResource("5_lquwl")
@@ -45,6 +46,9 @@ animations = [{
 "name": &"default",
 "speed": 9.0
 }]
+
+[sub_resource type="FontVariation" id="FontVariation_efxa6"]
+base_font = ExtResource("10_4c57u")
 
 [node name="main" type="Node2D" unique_id=1853528678]
 script = ExtResource("1_lquwl")
@@ -123,3 +127,31 @@ limit_left = 0
 limit_top = 0
 limit_right = 320
 limit_bottom = 180
+
+[node name="Win" type="Label" parent="." unique_id=1445122368]
+visible = false
+offset_left = 45.0
+offset_top = 31.0
+offset_right = 269.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 0.047058824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_efxa6")
+theme_override_font_sizes/font_size = 32
+text = "You win"
+uppercase = true
+
+[node name="Win2" type="Label" parent="." unique_id=346167573]
+visible = false
+offset_left = 50.0
+offset_top = 62.0
+offset_right = 274.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(1, 1, 0.047058824, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = SubResource("FontVariation_efxa6")
+theme_override_font_sizes/font_size = 24
+text = "Turns: 13"
+uppercase = true

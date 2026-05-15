@@ -4,6 +4,7 @@ signal age_changed
 signal shield_changed
 signal player_death
 
+var turn_counter : int = 0
 
 var current_age : float = 25.0:
 	set(value):

@@ -68,6 +68,9 @@ func _on_card_played(data: CardData):
 	# Play card select sound
 	play_sfx(card_select_sfx)
 	
+	# Plus +1 turn counter
+	GameState.turn_counter += 1
+	
 	# Add buffer so sound isnt spammy
 	await get_tree().create_timer(0.5).timeout
 	
@@ -237,6 +240,14 @@ func _on_player_death():
 	# Change scene
 	get_tree().change_scene_to_file("res://home_menu/home_menu.tscn")
 
+func win():
+	$Win.visible = true
+	$Win2.text = "Turns" + str(GameState.turn_counter)
+	$Win2.visible = true
+	
+	# Reset
+	await get_tree().create_timer(5).timeout # Wait for abit
+	_on_player_death()
 
 # -------------------------- UTILITY -------------------------------
 func play_sfx(sfx: AudioStream):
