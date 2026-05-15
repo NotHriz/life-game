@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://6numabxisdv5"]
 
-[ext_resource type="Script" uid="uid://0umaktnqojbd" path="res://home_menu/home_menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://cqk67mdqqjoqr" path="res://home_menu/home_menu.gd" id="1_menu"]
+[ext_resource type="FontFile" uid="uid://ddtrmivvga8lv" path="res://home_menu/PublicPixel-rv0pA.ttf" id="2_2hntb"]
+[ext_resource type="FontFile" uid="uid://ked3l4ekcq4w" path="res://GameUI/PublicPixel-rv0pA.ttf" id="3_ohbva"]
 
 [node name="HomeMenu2" type="Control" unique_id=467489979]
 layout_mode = 3
@@ -25,12 +27,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -300.0
-offset_top = 160.0
-offset_right = 300.0
+offset_left = -320.0
+offset_top = 168.0
+offset_right = 320.0
 offset_bottom = 260.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.878, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_2hntb")
 theme_override_font_sizes/font_size = 64
 text = "LIFE  GAME"
 horizontal_alignment = 1
@@ -47,6 +50,7 @@ offset_right = 200.0
 offset_bottom = 300.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.6, 0.4, 0.8, 1)
+theme_override_fonts/font = ExtResource("2_2hntb")
 theme_override_font_sizes/font_size = 16
 text = "A CARD-BASED LIFE RPG"
 horizontal_alignment = 1
@@ -79,6 +83,7 @@ theme_override_constants/separation = 20
 [node name="StartButton" type="Button" parent="VBoxContainer" unique_id=35563293]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.878, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_2hntb")
 theme_override_font_sizes/font_size = 28
 text = "> START GAME <"
 flat = true
@@ -86,6 +91,7 @@ flat = true
 [node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1919526214]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75, 0.75, 0.85, 1)
+theme_override_fonts/font = ExtResource("2_2hntb")
 theme_override_font_sizes/font_size = 28
 text = "  SETTINGS  "
 flat = true
@@ -93,6 +99,7 @@ flat = true
 [node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1180421474]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.75, 0.75, 0.85, 1)
+theme_override_fonts/font = ExtResource("2_2hntb")
 theme_override_font_sizes/font_size = 28
 text = "  EXIT  "
 flat = true
@@ -108,6 +115,7 @@ offset_right = 200.0
 offset_bottom = -8.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.35, 0.3, 0.45, 1)
+theme_override_fonts/font = ExtResource("3_ohbva")
 theme_override_font_sizes/font_size = 16
 text = "v0.1 ALPHA"
 uppercase = true
@@ -119,13 +127,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
+offset_left = -224.0
 offset_top = -36.0
 offset_right = -16.0
 offset_bottom = -8.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.35, 0.3, 0.45, 1)
+theme_override_fonts/font = ExtResource("3_ohbva")
 theme_override_font_sizes/font_size = 16
 text = "2025 LIFEGAME"
 horizontal_alignment = 2

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://ceeo4r3ve6nfg"]
 
 [ext_resource type="Texture2D" uid="uid://45omu0yhu2um" path="res://assets/sword.png" id="1_ivai2"]
-[ext_resource type="Script" uid="uid://2kouutjvxubg" path="res://cards/card.gd" id="1_nwofj"]
+[ext_resource type="Script" uid="uid://bqdx0d6hhjvam" path="res://cards/card.gd" id="1_nwofj"]
+[ext_resource type="FontFile" uid="uid://ddtrmivvga8lv" path="res://home_menu/PublicPixel-rv0pA.ttf" id="2_jsqqk"]
+[ext_resource type="FontFile" uid="uid://ked3l4ekcq4w" path="res://GameUI/PublicPixel-rv0pA.ttf" id="3_f61jr"]
+[ext_resource type="FontFile" uid="uid://6a584bilp1an" path="res://cards/GomePixel-ARJd7.otf" id="4_jsqqk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwofj"]
 
@@ -44,7 +47,8 @@ offset_left = 2.0
 offset_top = -1.0
 offset_right = 42.0
 offset_bottom = 22.0
-theme_override_font_sizes/font_size = 6
+theme_override_fonts/font = ExtResource("2_jsqqk")
+theme_override_font_sizes/font_size = 4
 text = "Excalibur"
 
 [node name="CardArt" type="Panel" parent="." unique_id=1310024970]
@@ -73,6 +77,7 @@ offset_left = 29.0
 offset_top = 63.0
 offset_right = 47.0
 offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("3_f61jr")
 theme_override_font_sizes/font_size = 4
 text = "0.5 years"
 
@@ -92,6 +97,7 @@ offset_top = 36.0
 offset_right = 45.0
 offset_bottom = 64.0
 theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("4_jsqqk")
 theme_override_font_sizes/font_size = 4
 text = "Deal 1D6 damage to one enemy"
 autowrap_mode = 3

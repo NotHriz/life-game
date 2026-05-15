@@ -71,8 +71,6 @@ visible = false
 position = Vector2(156, 20)
 sprite_frames = SubResource("SpriteFrames_4c57u")
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
 
 [node name="DiceResult" type="Label" parent="." unique_id=1036442446]
 visible = false
