@@ -103,6 +103,8 @@ func _on_card_played(data: CardData):
 	if (enemy):
 		enemy_attack()
 	
+	# Added buffer so it isnt spammy
+	await get_tree().create_timer(1.5).timeout
 	
 	# Check if enemy killed player
 	if (GameState.current_age >= GameState.max_age):
