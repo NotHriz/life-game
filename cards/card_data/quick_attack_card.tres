@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://cjgdfy06k4xci"]
 
-[ext_resource type="Script" uid="uid://cialk67mosayb" path="res://cards/card_data.gd" id="1_ad3m8"]
+[ext_resource type="Script" uid="uid://dtqwcre74dqqk" path="res://cards/card_data.gd" id="1_ad3m8"]
 
 [resource]
 script = ExtResource("1_ad3m8")
-card_name = "Quick Attack"
-description = "Dash at the Enemy"
+card_name = "Shield"
+description = "Protect from damage"
+cost = 1.0
 dice_count = 2
 dice_type = 4
-card_color = Color(1, 0, 0, 1)
+card_color = Color(0, 0, 1, 1)
+card_type = "defence"
 metadata/_custom_type_script = "uid://cialk67mosayb"
