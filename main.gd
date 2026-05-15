@@ -7,6 +7,14 @@ var enemy_scene = preload("res://enemy/enemy.tscn")
 # Preload player
 @onready var player: CharacterBody2D = $player
 
+# Sound Preload
+var card_select_sfx = load("res://assets/sound/Card select (mp3cut.net).wav")
+var dragon_attack_sfx = load("res://assets/sound/Dragon attack (mp3cut.net).wav")
+var ghost_attack_sfx = load("res://assets/sound/Ghost attack (mp3cut.net).wav")
+var goblin_attack_sfx = load("res://assets/sound/goblin attack 2.mp3")
+var wizard_attack_sfx = load("res://assets/sound/Wizard attack (mp3cut.net).wav")
+var heal_sfx = load("res://assets/sound/heal.wav")
+var sword_attack_sfx = load("res://assets/sound/sword attack (mp3cut.net).wav")
 
 var enemy_pool: Array = []
 var enemy = null
@@ -56,6 +64,12 @@ func _on_card_played(data: CardData):
 	# Disable all card while active
 	set_cards_interactable(true)
 	
+	# Play card select sound
+	play_sfx(card_select_sfx)
+	
+	# Add buffer so sound isnt spammy
+	await get_tree().create_timer(0.5).timeout
+	
 	# Check if enemy still alive
 	if (not enemy):
 		return
@@ -78,11 +92,13 @@ func _on_card_played(data: CardData):
 			enemy.take_damage(result)
 			player_anim = "attack"
 			enemy_anim = "attack"
+			play_sfx(sword_attack_sfx)
 		"defence":
 			GameState.shield = min(12, GameState.shield + result)
 		"heal":
 			GameState.current_age -= result
 			player_anim = "heal"
+			play_sfx(heal_sfx)
 			
 	# Play animation
 	player.play_animation(player_anim)
@@ -94,6 +110,8 @@ func _on_card_played(data: CardData):
 		await player.animation_finished
 	if (enemy_anim != ""):
 		await enemy.animation_finished
+		
+	await get_tree().create_timer(0.5).timeout
 
 
 	print("played: ", data.card_name) # For debugging purposes
@@ -169,17 +187,29 @@ func enemy_attack():
 	match enemy.data.enemy_name:
 		"goblin":
 			player_anim = "goblin_attack"
+			play_sfx(goblin_attack_sfx)
 		"ghost":
 			player_anim = "ghost_attack"
+			play_sfx(ghost_attack_sfx)
 		"dragon":
 			player_anim = "dragon_attack"
+			play_sfx(dragon_attack_sfx)
 		"wizard":
 			player_anim = "wizard_attack"
+			play_sfx(wizard_attack_sfx)
 	
 	player.play_animation(player_anim)
 	
 	# Wait for animation to finish
 	if (player_anim != ""):
 		await player.animation_finished
-	
-	
+		
+
+# -------------------------- UTILITY -------------------------------
+func play_sfx(sfx: AudioStream):
+	var audio = AudioStreamPlayer.new()
+	audio.stream = sfx
+	add_child(audio)
+	audio.play()
+	# Auto cleanup when done
+	audio.finished.connect(audio.queue_free)
