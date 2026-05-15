@@ -49,7 +49,8 @@ func _on_card_played(data: CardData):
 	# Check if enemy still alive
 	if (not enemy):
 		return
-		
+	
+	############### Player Turn ####################
 	# Check if user have enough age to play
 	if GameState.current_age + data.cost > GameState.max_age:
 		print("You Died")
@@ -63,9 +64,20 @@ func _on_card_played(data: CardData):
 	match data.card_type:
 		"attack":
 			enemy.take_damage(result)
+		# TODO: Make something for other card
+		"defence":
+			pass
+		"heal":
+			pass
 		
 	print("played: ", data.card_name) # For debugging purposes
 
+	############### Enemy Turn ####################
+	# Check again if player killed enemy
+	if (enemy):
+		enemy_attack()
+		
+		
 # Roll Dice
 func roll_dice(data: CardData):
 	var sum := 0
@@ -103,3 +115,16 @@ func spawn_enemy():
 	
 	# Spawn next enemy when current one dies
 	enemy.enemy_death.connect(spawn_enemy)
+	
+func enemy_attack():
+	var enemy_name = enemy.data.enemy_name
+	GameState.current_age += enemy.data.damage
+	match enemy.data.enemy_name:
+		"goblin":
+			pass
+		"ghost":
+			pass
+		"dragon":
+			pass
+		"wizard":
+			pass
