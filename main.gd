@@ -26,6 +26,7 @@ func _ready() -> void:
 	# Add enemy to pool
 	enemy_pool = load_all_enemy()
 	spawn_enemy()
+	enemy_just_spawned = false
 	
 	# Randomize character starting age
 	var age_max = randf_range(85, 110)
