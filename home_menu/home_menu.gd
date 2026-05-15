@@ -20,10 +20,14 @@ var menu_items: Array = []
 var blink_visible: bool = true
 
 # Audio bus indices
-var music_bus := AudioServer.get_bus_index("Music")
-var sfx_bus := AudioServer.get_bus_index("SFX")
+var music_bus :int
+var sfx_bus :int
 
 func _ready() -> void:
+	music_bus = AudioServer.get_bus_index("Music")
+	sfx_bus = AudioServer.get_bus_index("SFX")
+	print("Music bus: ", music_bus)  # debug, should not be -1
+	print("SFX bus: ", sfx_bus)      # debug, should not be -1
 	menu_items = [start_btn, settings_btn, exit_btn]
 	settings_panel.hide()
 	_update_selection()

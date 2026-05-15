@@ -71,9 +71,8 @@ func _on_card_played(data: CardData):
 	# Add buffer so sound isnt spammy
 	await get_tree().create_timer(0.5).timeout
 	
-	# Check if enemy still alive
-	if (not enemy):
-		return
+	# Check if enemy still alive	if (not enemy):
+	return
 	
 	############### Player Turn ####################
 	# Check if user have enough age to play
@@ -212,6 +211,7 @@ func enemy_attack():
 func play_sfx(sfx: AudioStream):
 	var audio = AudioStreamPlayer.new()
 	audio.stream = sfx
+	audio.bus = "SFX"
 	add_child(audio)
 	audio.play()
 	# Auto cleanup when done

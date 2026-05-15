@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ct4f8sd8cprhn" path="res://maps/map1.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cnpymd0g86vve" path="res://player/player.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://cnhxlspbi2r3e" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://cr2n47bptolw3" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cknpoupaqnhu" path="res://GameUI/game_ui.tscn" id="4_1bvp3"]
-[ext_resource type="AudioStream" uid="uid://b22ll0xd4yq10" path="res://assets/Audio/[blue archive] usagi flap but chill lofi.mp3" id="5_lquwl"]
 
 [node name="main" type="Node2D" unique_id=1853528678]
 script = ExtResource("1_lquwl")
@@ -24,8 +23,3 @@ offset_bottom = 180.0
 
 [node name="EnemySpawnPoint" type="Marker2D" parent="." unique_id=684905475]
 position = Vector2(258, 84)
-
-[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=636652963]
-stream = ExtResource("5_lquwl")
-autoplay = true
-bus = &"Music"

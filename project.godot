@@ -17,11 +17,12 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://ba2380jatqriy"
+buses/default_bus_layout="uid://c6dvjxstjhprv"
 
 [autoload]
 
-GameState="*uid://jl1us85rgjce"
+GameState="*uid://cl7t1csoi1mru"
+AudioManager="*uid://japl0xrr2go6"
 
 [display]
 
