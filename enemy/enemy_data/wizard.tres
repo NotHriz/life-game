@@ -3,6 +3,18 @@
 [ext_resource type="Script" uid="uid://c221m6c8uqkim" path="res://enemy/enemy_data.gd" id="1_buuxr"]
 [ext_resource type="Texture2D" uid="uid://b4hw4nt0kr327" path="res://assets/LifeGame/wizard final boss.png" id="2_h7max"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7max"]
+atlas = ExtResource("2_h7max")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ww4u"]
+atlas = ExtResource("2_h7max")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx6n3"]
+atlas = ExtResource("2_h7max")
+region = Rect2(160, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fj43x"]
 atlas = ExtResource("2_h7max")
 region = Rect2(0, 0, 32, 32)
@@ -19,6 +31,20 @@ region = Rect2(64, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_h7max")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ww4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx6n3")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fj43x")
 }, {
 "duration": 1.0,
@@ -29,10 +55,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [resource]
 script = ExtResource("1_buuxr")
+enemy_name = "wizard"
+health = 32.0
+damage = 8.0
 sprite = SubResource("SpriteFrames_8ww4u")
 metadata/_custom_type_script = "uid://c221m6c8uqkim"

@@ -35,5 +35,6 @@ animations = [{
 [resource]
 script = ExtResource("1_bfv3m")
 enemy_name = "dragon"
+health = 50.0
 sprite = SubResource("SpriteFrames_sxgye")
 metadata/_custom_type_script = "uid://c221m6c8uqkim"

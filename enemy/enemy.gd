@@ -9,6 +9,8 @@ var data: EnemyData
 # Enemy death signal
 signal enemy_death
 
+signal animation_finished
+
 
 func setup(incoming_data: EnemyData):
 	data = incoming_data
@@ -43,3 +45,21 @@ func take_damage(amount: float):
 		enemy_death.emit()
 		queue_free()
 		
+# Play animation
+func play_animation(anim_name: String):
+	if anim_name != "":
+		$CardEffect.play(anim_name) 
+		await $CardEffect.animation_finished
+		animation_finished.emit()
+		
+# Play attack animation
+func play_attack_animation():
+	$AnimatedSprite2D.play("attack")
+	await $AnimatedSprite2D.animation_finished
+	animation_finished.emit()
+	
+	play_idle()
+
+# Play idle animation
+func play_idle():
+	$AnimatedSprite2D.play("idle")

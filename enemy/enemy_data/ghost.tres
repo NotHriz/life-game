@@ -3,6 +3,22 @@
 [ext_resource type="Script" uid="uid://c221m6c8uqkim" path="res://enemy/enemy_data.gd" id="1_8jtvi"]
 [ext_resource type="Texture2D" uid="uid://c4r65b51uopy3" path="res://assets/LifeGame/ghost.png" id="2_8vtbl"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt526"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bti2g"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mikdv"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj7mp"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(352, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vtbl"]
 atlas = ExtResource("2_8vtbl")
 region = Rect2(0, 0, 32, 32)
@@ -15,8 +31,45 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("2_8vtbl")
 region = Rect2(64, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sha2p"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt0ek"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6d5f"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiwjw"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1iss"]
+atlas = ExtResource("2_8vtbl")
+region = Rect2(224, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jtvi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt526")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bti2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mikdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj7mp")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8vtbl")
@@ -26,14 +79,31 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8j2db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sha2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt0ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6d5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiwjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1iss")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [resource]
 script = ExtResource("1_8jtvi")
 enemy_name = "ghost"
+health = 27.0
+damage = 7.0
 sprite = SubResource("SpriteFrames_8jtvi")
 metadata/_custom_type_script = "uid://c221m6c8uqkim"
