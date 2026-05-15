@@ -1,0 +1,236 @@
+[gd_scene format=3 uid="uid://u237re5xnjxy"]
+
+[ext_resource type="Script" uid="uid://0umaktnqojbd" path="res://home_menu/home_menu.gd" id="1_menu"]
+
+[node name="HomeMenu" type="Control" unique_id=339740720]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1190727508]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.047, 0.035, 0.078, 1)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=564655925]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 160.0
+offset_right = 300.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.878, 0.2, 1)
+theme_override_font_sizes/font_size = 64
+text = "LIFE  GAME"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SubtitleLabel" type="Label" parent="." unique_id=407228570]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 268.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.6, 0.4, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "A CARD-BASED LIFE RPG"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DividerTop" type="ColorRect" parent="." unique_id=2069222044]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 308.0
+offset_right = 200.0
+offset_bottom = 312.0
+grow_horizontal = 2
+color = Color(0.45, 0.2, 0.7, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=390294042]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 330.0
+offset_right = 180.0
+offset_bottom = 530.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1118584774]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.878, 0.2, 1)
+theme_override_font_sizes/font_size = 28
+text = "> START GAME <"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=1459058659]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 28
+text = "  SETTINGS  "
+flat = true
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=653373471]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.85, 1)
+theme_override_font_sizes/font_size = 28
+text = "  EXIT  "
+flat = true
+
+[node name="VersionLabel" type="Label" parent="." unique_id=443649006]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -36.0
+offset_right = 200.0
+offset_bottom = -8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.35, 0.3, 0.45, 1)
+theme_override_font_sizes/font_size = 16
+text = "v0.1 ALPHA"
+uppercase = true
+
+[node name="CopyrightLabel" type="Label" parent="." unique_id=501434183]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -36.0
+offset_right = -16.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.35, 0.3, 0.45, 1)
+theme_override_font_sizes/font_size = 16
+text = "2025 LIFEGAME"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="SettingsPanel" type="Control" parent="." unique_id=1426621009]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelBorder" type="ColorRect" parent="SettingsPanel" unique_id=500713719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -181.0
+offset_right = 241.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45, 0.2, 0.7, 1)
+
+[node name="PanelBG" type="ColorRect" parent="SettingsPanel" unique_id=1932267883]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -178.0
+offset_right = 238.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.06, 0.14, 0.97)
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel" unique_id=312258737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.878, 0.2, 1)
+theme_override_font_sizes/font_size = 32
+text = "[ SETTINGS ]"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PlaceholderLabel" type="Label" parent="SettingsPanel" unique_id=1876131098]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 18
+text = "No settings available yet.
+More options coming soon!"
+horizontal_alignment = 1
+
+[node name="CloseHint" type="Label" parent="SettingsPanel" unique_id=1194136775]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 130.0
+offset_right = 200.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5, 0.35, 0.65, 1)
+theme_override_font_sizes/font_size = 16
+text = "[ ESC ] CLOSE"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CursorBlinkTimer" type="Timer" parent="." unique_id=221178045]
+wait_time = 0.5
+autostart = true
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
